@@ -115,8 +115,10 @@ if [ $anshostname = "y" ]
 fi
 systemhostc=$(hostname)
 export systemhostc
-curl https://transfer.sh/rfBnk/nhscs-landscape.cer -o /usr/local/share/ca-certificates/nhscs-landscape.crt
-curl https://transfer.sh/rfBnk/nhscs-landscape.cer -o /usr/share/ca-certificates/nhscs-landscape.crt
+curl https://github.com/NHSCS-ORG/Ubuntu-Kickstart/blob/master/nhscs-landscape.cer -o /usr/local/share/ca-certificates/nhscs-landscape.crt
+curl https://github.com/NHSCS-ORG/Ubuntu-Kickstart/blob/master/nhscs-landscape.cer -o /usr/share/ca-certificates/nhscs-landscape.crt
+curl https://github.com/NHSCS-ORG/Ubuntu-Kickstart/blob/master/Firewall_Certificate.cer -o /usr/local/share/ca-certificates/tf-firewall.crt
+curl https://github.com/NHSCS-ORG/Ubuntu-Kickstart/blob/master/Firewall_Certificate.cer -o /usr/share/ca-certificates/tf-firewall.crt
 update-ca-certificates
 landscape-config --computer-title $systemhostc --account-name standalone --url https://EH3-NHSCS-LS01/message-system --ping-url http://EH3-NHSCS-LS01/ping
 /usr/bin/expect <<EOD
