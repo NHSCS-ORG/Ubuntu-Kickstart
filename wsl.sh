@@ -79,5 +79,3 @@ echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 echo "We're done. Reloading in 10 seconds."
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 sleep 10
-bash.exe
-exit
