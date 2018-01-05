@@ -69,7 +69,7 @@ sleep 2
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 echo "We're going to configure Landscape now."
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-apt-get install landscape-client
+apt-get install landscape-client expect -y
 systemhost=$(hostname)
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 echo "The current system hostname is $systemhost. Do you want to change it? [y/N]"
