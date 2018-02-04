@@ -61,7 +61,7 @@ echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 echo "WE ARE GOING TO UPDATE THE SYSTEM NOW"
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 sleep 2
-apt-get update && apt-get dist-upgrade
+apt-get update && apt-get dist-upgrade -y
 echo =-=-=-=-=-=-=-=-=-=
 echo "Updates are done"
 echo =-=-=-=-=-=-=-=-=-=
