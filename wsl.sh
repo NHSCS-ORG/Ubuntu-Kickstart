@@ -69,10 +69,10 @@ sleep 2
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 echo "WE ARE GOING TO ADD CERTIFICATES NOW"
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-curl https://github.com/NHSCS-ORG/Ubuntu-Kickstart/blob/master/nhscs-landscape.cer -o /usr/local/share/ca-certificates/nhscs-landscape.crt
-curl https://github.com/NHSCS-ORG/Ubuntu-Kickstart/blob/master/nhscs-landscape.cer -o /usr/share/ca-certificates/nhscs-landscape.crt
-curl https://github.com/NHSCS-ORG/Ubuntu-Kickstart/blob/master/Firewall_Certificate.cer -o /usr/local/share/ca-certificates/tf-firewall.crt
-curl https://github.com/NHSCS-ORG/Ubuntu-Kickstart/blob/master/Firewall_Certificate.cer -o /usr/share/ca-certificates/tf-firewall.crt
+curl -k https://raw.githubusercontent.com/NHSCS-ORG/Ubuntu-Kickstart/master/nhscs-landscape.cer -o /usr/local/share/ca-certificates/nhscs-landscape.crt
+curl -k https://raw.githubusercontent.com/NHSCS-ORG/Ubuntu-Kickstart/master/nhscs-landscape.cer -o /usr/share/ca-certificates/nhscs-landscape.crt
+curl -k https://raw.githubusercontent.com/NHSCS-ORG/Ubuntu-Kickstart/master/Firewall_Certificate.cer -o /usr/local/share/ca-certificates/tf-firewall.crt
+curl -k https://raw.githubusercontent.com/NHSCS-ORG/Ubuntu-Kickstart/master/Firewall_Certificate.cer -o /usr/share/ca-certificates/tf-firewall.crt
 update-ca-certificates
 sleep 5
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
