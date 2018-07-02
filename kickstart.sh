@@ -62,9 +62,10 @@ echo "WE ARE GOING TO UPDATE THE SYSTEM NOW"
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 sleep 2
 apt-get update && apt-get dist-upgrade -y
-echo =-=-=-=-=-=-=-=-=-=
-echo "Updates are done"
-echo =-=-=-=-=-=-=-=-=-=
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo "Updates are done, cleaning the system of old packages."
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+apt-get autoremove -y && apt-get autoclean
 sleep 2
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 echo "We're going to configure Landscape now."
