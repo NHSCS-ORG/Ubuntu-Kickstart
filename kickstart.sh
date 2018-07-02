@@ -123,7 +123,7 @@ curl -k https://raw.githubusercontent.com/NHSCS-ORG/Ubuntu-Kickstart/master/Fire
 update-ca-certificates
 /usr/bin/expect <<EOD
   set systemhostc [puts $env(systemhostc)]
-  spwan "landscape-config --computer-title $systemhostc --account-name standalone --url https://EH3-NHSCS-LS01/message-system --ping-url http://EH3-NHSCS-LS01/ping"
+  spawn "landscape-config --computer-title $systemhostc --account-name standalone --url https://EH3-NHSCS-LS01/message-system --ping-url http://EH3-NHSCS-LS01/ping"
   expect "Start Landscape client on*" {send Y\r}
   expect "Account registration*" {send \r}
   expect "HTTP proxy*" {send \r}
