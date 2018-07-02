@@ -121,8 +121,8 @@ curl -k https://raw.githubusercontent.com/NHSCS-ORG/Ubuntu-Kickstart/master/Fire
 curl -k https://raw.githubusercontent.com/NHSCS-ORG/Ubuntu-Kickstart/master/Firewall_Certificate.cer -o /usr/share/ca-certificates/tf-firewall.crt
 update-ca-certificates
 /usr/bin/expect <<EOD
-  spwan "landscape-config --computer-title $systemhostc --account-name standalone --url https://EH3-NHSCS-LS01/message-system --ping-url http://EH3-NHSCS-LS01/ping"
   set systemhostc [puts $env(systemhostc)]
+  spwan "landscape-config --computer-title $systemhostc --account-name standalone --url https://EH3-NHSCS-LS01/message-system --ping-url http://EH3-NHSCS-LS01/ping"
   expect "Start Landscape client on*" {send Y\r}
   expect "Account registration*" {send \r}
   expect "HTTP proxy*" {send \r}
