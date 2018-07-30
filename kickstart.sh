@@ -7,7 +7,7 @@ if ping -c 1 10.162.150.10 > /dev/null
     :
   else
     echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    echo This system was unable to contact NHSCS.
+    echo This system was NOT ABLE to contact NHSCS.
     echo It is NOT recomended to run this kickstart on machines that can not contact NHSCS.
     echo Based on this warning, do you want to continue? [y/N][ENTER]
     read nhscsping
