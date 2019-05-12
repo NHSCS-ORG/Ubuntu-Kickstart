@@ -7,7 +7,7 @@ if ping -c 1 10.162.150.10 > /dev/null
     :
   else
     echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    echo This system was unable to contact NHSCS.
+    echo This system was NOT ABLE to contact NHSCS.
     echo It is NOT recomended to run this kickstart on machines that can not contact NHSCS.
     echo Based on this warning, do you want to continue? [y/N][ENTER]
     read nhscsping
@@ -62,9 +62,10 @@ echo "WE ARE GOING TO UPDATE THE SYSTEM NOW"
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 sleep 2
 apt-get update && apt-get dist-upgrade -y
-echo =-=-=-=-=-=-=-=-=-=
-echo "Updates are done"
-echo =-=-=-=-=-=-=-=-=-=
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo "Updates are done, cleaning the system of old packages."
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+apt-get autoremove -y && apt-get autoclean
 sleep 2
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 echo "We're going to configure Landscape now."
@@ -121,8 +122,8 @@ curl -k https://raw.githubusercontent.com/NHSCS-ORG/Ubuntu-Kickstart/master/Fire
 curl -k https://raw.githubusercontent.com/NHSCS-ORG/Ubuntu-Kickstart/master/Firewall_Certificate.cer -o /usr/share/ca-certificates/tf-firewall.crt
 update-ca-certificates
 /usr/bin/expect <<EOD
-  spwan "landscape-config --computer-title $systemhostc --account-name standalone --url https://EH3-NHSCS-LS01/message-system --ping-url http://EH3-NHSCS-LS01/ping"
   set systemhostc [puts $env(systemhostc)]
+  spawn "landscape-config --computer-title $systemhostc --account-name standalone --url https://EH3-NHSCS-LS01/message-system --ping-url http://EH3-NHSCS-LS01/ping"
   expect "Start Landscape client on*" {send Y\r}
   expect "Account registration*" {send \r}
   expect "HTTP proxy*" {send \r}
